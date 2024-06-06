@@ -11,10 +11,8 @@ struct Sidebar: View {
     var body: some View {
         NavigationStack {
             VStack {
-
-
                     List {
-                        Section(header: Text("Categories")) {
+                        Section(header: Text("Stories")) {
                             NavigationLink(destination: StoryView()) {
                                 Label("All", systemImage: "book.closed")
                             }
@@ -39,11 +37,12 @@ struct Sidebar: View {
                             }
 
                         }
+                        Image("LorenzoPortrait")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                     }
                     .listStyle(.sidebar)
-                Image("Beast-BW")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                // image here
 
                 }
                 .navigationTitle("Categories")

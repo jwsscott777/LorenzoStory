@@ -66,7 +66,7 @@ struct IntroView: View {
     }
     @ViewBuilder
     func ArtWork() -> some View {
-        let height = size.height * 0.45
+        let height = size.height * 0.50 // originally 45
         GeometryReader { proxy in
             let size = proxy.size
             let minY = proxy.frame(in: .named("SCROLL")).minY
@@ -133,7 +133,7 @@ struct IntroView: View {
             let progress = minY / (height * (minY > 0 ? 0.5 : 0.8))
             let titleProgress = minY / height
             HStack(spacing: 15) {
-                Text("Bulldog")
+                Text("Hey")
                     .font(.caption)
                     .foregroundStyle(.white)
                     .padding(.horizontal, 10)
@@ -141,7 +141,7 @@ struct IntroView: View {
                     .border(.white, width: 1.5)
                     .opacity(1 + progress)
                 Spacer(minLength: 0)
-                Text("Stories")
+                Text("There")
                     .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)

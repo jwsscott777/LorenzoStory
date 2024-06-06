@@ -19,7 +19,7 @@ struct LoveView: View {
                             .bold()
                             .frame(maxWidth: .infinity)
                             .padding()
-                        if let loveCategory = dataManager.categories.first(where: { $0.name == "Mystery" }) {
+                        if let loveCategory = dataManager.categories.first(where: { $0.name == "Love" }) {
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 16)], spacing: 16) {
                                 ForEach(loveCategory.books) { book in
                                     NavigationLink(destination: BookDetailView(book: book)) {

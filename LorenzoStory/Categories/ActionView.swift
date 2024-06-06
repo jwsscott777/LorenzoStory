@@ -19,7 +19,7 @@ struct ActionView: View {
                             .bold()
                             .frame(maxWidth: .infinity)
                             .padding()
-                        if let actionCategory = dataManager.categories.first(where: { $0.name == "Mystery" }) {
+                        if let actionCategory = dataManager.categories.first(where: { $0.name == "Action" }) {
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 16)], spacing: 16) {
                                 ForEach(actionCategory.books) { book in
                                     NavigationLink(destination: BookDetailView(book: book)) {
