@@ -13,6 +13,7 @@ struct BookDetailView: View {
     @State private var fontColor: Color = .white
     @State private var isShowingTextStyleAdjustmentView = false
 
+
     private var backButton: some View {
         Button(action: {
             isShowingTextStyleAdjustmentView.toggle()
@@ -23,63 +24,91 @@ struct BookDetailView: View {
         })
     }
     var book: Book
-        var body: some View {
-            NavigationStack {
-                progressTraker {
-                    ScrollView {
-                        VStack {
-                            Image(book.imageName)
-                                .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .visualEffect { content, proxy in
-                                content
-                                    .hueRotation(.degrees(hueAdjust ? 60  : 0))
-                            }
-                            .onAppear {
-                                withAnimation(.easeInOut(duration: 17).delay(0.5).repeatForever(autoreverses: true)) {
-                                    hueAdjust.toggle()
-                                }
-                            }
-                            Text(book.title)
-                                .font(.title)
-
-
-                            Spacer()
-                        }
-                        .padding()
-                        .background(book.color)
-                        .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
+    var body: some View {
+        NavigationStack {
+            progressTraker {
+                ScrollView {
+                    VStack {
+                        imageSection
+                        titleSection
+                        Spacer()
+                    }
+                    .padding()
+                    .background(book.color)
+                    .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
                     .shadow(color: book.color.opacity(0.3), radius: 20, x: 0, y: 10)
 
-                        VStack {
-                            Image(book.logo)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .clipShape(RoundedRectangle(cornerRadius: 16.0 ))
-                                .frame(width: 80, height: 80)
-                                .padding()
-                            Text(book.story)
-                                .font(.system(size: fontSize))
-                                .foregroundStyle(fontColor)
-                        }
-                    }
-                    .edgesIgnoringSafeArea(.all)
-                    .sheet(isPresented: $isShowingTextStyleAdjustmentView, content: {
-                            TextStyleAdjustmentView(fontSize: $fontSize, fontColor: $fontColor)
-                            .presentationDetents([ .medium])
-                            .presentationBackground(.ultraThinMaterial)
-                    })
+                    VStack {
+                       logoSection
+                        storySection
+                    }// Vstack
                 }
+                .edgesIgnoringSafeArea(.all)
+                .sheet(isPresented: $isShowingTextStyleAdjustmentView, content: {
+                    TextStyleAdjustmentView(fontSize: $fontSize, fontColor: $fontColor)
+                        .presentationDetents([ .medium])
+                        .presentationBackground(.ultraThinMaterial)
+                })
             }
-            .navigationTitle(book.title)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        backButton
-                    }
-                }
+        }
+        .navigationTitle(book.title)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                backButton
+            }
         }
     }
+
+    private var imageSection: some View {
+        Image(book.imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .visualEffect { content, proxy in
+                content
+                    .hueRotation(.degrees(hueAdjust ? 30  : 0))
+                    .opacity(hueAdjust ? 0.95 : 1)
+                    .contrast(hueAdjust ? 1.05 : 1)
+                    .saturation(hueAdjust ? 1.1 : 1)
+            }
+            .onAppear {
+                withAnimation(.easeInOut(duration: 17).delay(0.5).repeatForever(autoreverses: true)) {
+                    hueAdjust.toggle()
+                }
+            }
+    }
+    private var titleSection: some View {
+        Text(book.title)
+            .font(.title)
+    }
+    private var logoSection: some View {
+        HStack {
+            Image(book.logo)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipShape(RoundedRectangle(cornerRadius: 16.0 ))
+                .frame(width: 80, height: 80)
+                .padding()
+
+            NavigationLink(destination: AudioView(book: book, audioFile: book.audioFileName)) {
+                Text("Prefer to Listen?")
+                    .font(.callout)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white)
+                    .padding()
+                    .background {
+                        Capsule()
+                            .fill(Color.accentColor.gradient)
+                    }
+            }
+        }
+    }
+    private var storySection: some View {
+        Text(book.story)
+            .font(.system(size: fontSize))
+            .foregroundStyle(fontColor)
+    }
+}
 
     #Preview {
         NavigationStack {
