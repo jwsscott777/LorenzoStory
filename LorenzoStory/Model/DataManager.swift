@@ -10,7 +10,9 @@ import SwiftUI
 struct Audio: Identifiable, Hashable {
     var id = UUID()
     var bookTitle: String
-    var audioFileName: String
+   // var audioFileName: String
+    var englishAudioFile: String
+    var spanishAudioFile: String
 }
 
 struct Category: Identifiable, Hashable {
@@ -27,7 +29,8 @@ struct Book: Identifiable, Hashable{
     var color: Color
     var description: String
     var story: String
-    var audioFileName: String
+   // var audioFileName: String
+    var audios: [Audio]
 }
 
 class DataManager: ObservableObject {
@@ -56,7 +59,7 @@ class DataManager: ObservableObject {
                     The noise stirred the household, and soon enough, lights flickered on. The sight that greeted them was of me, growling, with a strange rat cornered in the main master’s office and a watch at my feet. The outcome? Let’s just say that it is not every day a bulldog solves’ a mystery and catches a thief.\n
                     As the sun rose that day, I lay on my favorite rug, thoroughly exhausted. I could still smell the remnants of that rat’s scent, but it was mixed with something else now—a note of pride and victory. I had protected my home, my family, and my territory. I closed my eyes, contented, ready for a well-deserved nap.\n
                     And so, even in the peaceful realm of human knees, thrilling mysteries, and heroic sagas unfolded. After all, the world is full of mysteries to solve, especially if you’re a bulldog named Lorenzo.\n
-                """, audioFileName: "Audio1"),
+                """, audios: [Audio(bookTitle: "Lorenzo the Beast", englishAudioFile: "Audio1", spanishAudioFile: "Audio1")]),
                 Book(title: "Beast of Dreams", imageName: "Beast3", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     In the world of Lorenzo, a robust handsome bulldog of remarkable courage and quiet curiosity, dreams were not just an escape to the realm of slumber but were also riddled with stories. Often they were of play and joy, of humans and the warmth of his house. But there were times when his dreams veered into the shadows, the places where canines seldom tread, even in their imaginations.\n
     One such dream left a deep impression on Lorenzo’s canine consciousness, a dream that he carried into his waking hours, a nocturnal adventure that clung to his thoughts like an unwelcome burr on his short, brindle coat.\n
@@ -76,7 +79,7 @@ class DataManager: ObservableObject {
     Just when the figure was close enough for Lorenzo to make out its monstrous form, he woke up. His heart pounded against his chest, his eyes wide and alert. His dream had felt so real, so intense, that it took him a moment to realize he was back in his comfy bed, safe in his familiar world.\n
     It was just a dream, but it was one that shook Lorenzo. He panted, trying to calm his racing heart, his eyes scanning the quiet room. Everything was in its place, peaceful and serene. Yet, the chill from his nightmare still lingered, a stark contrast to the comfort of his house. Lorenzo rose, shaking off the remnants of the nightmare, padding softly, in his own way, to his masters and saw they were asleep and safe. He sighed, reassured by their presence, a sense of peace slowly replacing the fear his dream had evoked.\n
     The night wore on, and Lorenzo went back to sleep, ready to brave the world of dreams once more. He was calmer now. After all, Lorenzo was not just a bulldog, he was a guardian, a warrior, even in the face of his dreams. It was another night, another dream, and he was ready for whatever it would bring.
-""", audioFileName: "Audio3"),
+""", audios: [Audio(bookTitle: "Beast of Dreams", englishAudioFile: "Audio3", spanishAudioFile: "Audio3")] ),
                 Book(title: "Beast of the Glades", imageName: "Beast5", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         I, Lorenzo, a stout English bulldog, walked with purpose as I trailed behind my humans. Their tall frames cast long, distorted shadows under the radiant Florida sun. My eyes, large and round, took in the panoramic display of wild grasses and mangrove clusters sprawled across the vast expanse of the Everglades.\n
         Our journey had begun from our home in Coconut Creek, equipped with tents, food, and their ceaseless chatter. As for me, I had my nose, my paws, and a keen sense of adventure. My coat, though thick and not suited for the Florida heat, bristled with anticipation.\n
@@ -91,7 +94,7 @@ class DataManager: ObservableObject {
         The creature, surprised and outnumbered, slithered back into the darkness from where it came. I stood my ground, panting heavily, watching as it disappeared into the marsh.\n
         The humans huddled around me, their hands, usually soft and gentle, gripping my fur. Their eyes, wide and with fear, were softening now, the ordeal slowly etching itself into the past. I, their brave beast of a bulldog, had faced the unknown, stood my ground, and triumphed.\n
         We left the Everglades the next morning, the humans chattering animatedly, their spirits lifted by the daylight. As for me, I walked with a swagger in my step, a canine hero in my own right, forever etched in the annals of a bulldog’s bravery in the wild land of the Everglades.
-    """, audioFileName: "Audio5"),
+    """, audios: [Audio(bookTitle: "Beast of the Glades", englishAudioFile: "Audio5", spanishAudioFile: "Audio5")]),
                 Book(title: "Whispers of the Wind", imageName: "Beast14", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         In a quiet community where the tops of buildings kissed the edges of the horizon, there lived an English Bulldog named Lorenzo. Every evening, as the sun dipped below the distant line of trees, he would make his way to his favorite chair on the patio that overlooked his small, simple world. It was his sacred ritual, his connection to something beyond what his eyes could see.\n
         Sitting on his chair, Lorenzo listened to the wind as it rustled through the grass and danced with the leaves. To him, these whispers of the wind were the stories of his ancestors, tales of courage and adventure that filled his heart with warmth as the world around him grew dark.\n
@@ -112,7 +115,7 @@ class DataManager: ObservableObject {
         Lorenzo, who had contemplated this himself on many occasions, looked out over his world stretched out in front of him and then back to his friend.\n
         “In the whispers of the wind,” Lorenzo rumbled gently, “I heard not just a call for help, but a call for purpose. I listened because…because I believed in the story the wind was telling me. And now, here with you, that story is complete.”\n
         At that moment, as the wind’s soft whispers wrapped around them like an age-old lullaby, Lorenzo and Ari sat as more than just friends; they were fellow storytellers, bound by the words shared under the watchful, starlit sky.
-    """, audioFileName: "Audio14"),
+    """, audios: [Audio(bookTitle: "Whispers of the Wind", englishAudioFile: "Audio14", spanishAudioFile: "Audio14")]),
             ]),
             Category(name: "Love", books: [
                 Book(title: "Beast of Dreams", imageName: "Beast3", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
@@ -134,7 +137,7 @@ class DataManager: ObservableObject {
     Just when the figure was close enough for Lorenzo to make out its monstrous form, he woke up. His heart pounded against his chest, his eyes wide and alert. His dream had felt so real, so intense, that it took him a moment to realize he was back in his comfy bed, safe in his familiar world.\n
     It was just a dream, but it was one that shook Lorenzo. He panted, trying to calm his racing heart, his eyes scanning the quiet room. Everything was in its place, peaceful and serene. Yet, the chill from his nightmare still lingered, a stark contrast to the comfort of his house. Lorenzo rose, shaking off the remnants of the nightmare, padding softly, in his own way, to his masters and saw they were asleep and safe. He sighed, reassured by their presence, a sense of peace slowly replacing the fear his dream had evoked.\n
     The night wore on, and Lorenzo went back to sleep, ready to brave the world of dreams once more. He was calmer now. After all, Lorenzo was not just a bulldog, he was a guardian, a warrior, even in the face of his dreams. It was another night, another dream, and he was ready for whatever it would bring.
-""", audioFileName: "Audio3"),
+""", audios: [Audio(bookTitle: "Beast of Dreams", englishAudioFile: "Audio3", spanishAudioFile: "Audio3")] ),
                 Book(title: "Beast of Love", imageName: "Beast4", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         Summer had arrived, sprinkling it with colors and scents that drew Lorenzo, the stunningly handsome Bulldog, from his usually leisurely lounging. The familiar surroundings of his home and balcony no longer seemed sufficient. There was an itch, a pull that stirred something within him—a yearning for companionship, for a partner, for love.\n
         As his masters took him for his daily walk around the community, Lorenzo strayed and pulled on the leash, from his usual path. His nose caught the scent of another—a scent that was new, yet somehow inviting. His heart thumped in his chest, his muscles tensing in anticipation.\n
@@ -146,7 +149,7 @@ class DataManager: ObservableObject {
         Their masters noticed it too—their playfulness, their bond, their unspoken affection. Smiles and loving head scratches were showered on the two Bulldogs in love, reinforcing the growing bond between Lorenzo and Bella.\n
         One day, as the leaves from the Oak tree rained around them like green snowflakes, Lorenzo nuzzled Bella. His heart pounding, his affection for her impossible to contain. Bella responded, nuzzling him back, their connection cemented in that simple, yet profound, gesture.\n
         Their love story wasn’t extravagant or dramatic. It was simple, pure—a meeting of two beasts under the Oak tree, a connection that transcended words, a relationship that only they understood.
-    """, audioFileName: "Audio4"),
+    """, audios: [Audio(bookTitle: "Beast of Love", englishAudioFile: "Audio4", spanishAudioFile: "Audio4")]),
                 Book(title: "HeartStrings", imageName: "Beast6", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         Beneath the hot Florida skies, I, Lorenzo, an English bulldog of some repute, found my world upended one day since I first met Bella. I found that my once unruffled existence had been stirred in her presence.\n
         Bella was a sight to behold, a lustrous speckled creature of my same breed, with fur as white as snow, splattered with brindle patches. She had an air about her that was both demure and commanding. The days that followed our initial meeting under the oak tree have caused my heart to pulsate with a rhythm unknown to me before.\n
@@ -162,7 +165,7 @@ class DataManager: ObservableObject {
         She trotted towards me, her eyes gleaming with admiration. As she brushed her snout against mine, the world fell silent. I, Lorenzo, the beast of a bulldog, had won not just a trivial race, but the heart of the splendid Bella.\n
         From that day forth, Bella and I were inseparable. We walked together, and I would often find her waiting for me when I awoke from my afternoon slumbers. Maximus, though initially a rival, became a good friend.\n
         The saga of my jealousy became a tale of victory and love. Amidst my canine friends, I found a companion, a love. And all it took was a race, a stick, and a dogged determination to win back the heart of the beautiful Bella.
-    """, audioFileName: "Audio6"),
+    """, audios: [Audio(bookTitle: "HeartStrings", englishAudioFile: "Audio6", spanishAudioFile: "Audio6")] ),
             ]),
             Category(name: "Action", books: [
                 Book(title: "Forgotten Garden", imageName: "Beast18", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
@@ -195,7 +198,7 @@ class DataManager: ObservableObject {
         Second master, with a twinkle in her eye, replied, “Or perhaps, this garden understands him.”\n
         Lorenzo, with newfound friends around him, realized that some mysteries were meant to be shared, not solved. The garden was not just soil and plants; it was memories and stories, held together by the threads of time.\n
         As the sun began its descent, casting golden hues around, Lorenzo led his masters out, the gate closing gently behind them. The world outside remained oblivious to the magic within, but for a bulldog named Lorenzo and his masters, the garden would forever be their shared secret—a path of mystery in an otherwise ordinary world.
-    """, audioFileName: "Audio18"),
+    """, audios: [Audio(bookTitle: "Forgotten Garden", englishAudioFile: "Audio18", spanishAudioFile: "Audio18")]),
                 Book(title: "Beast of Dreams", imageName: "Beast3", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     In the world of Lorenzo, a robust handsome bulldog of remarkable courage and quiet curiosity, dreams were not just an escape to the realm of slumber but were also riddled with stories. Often they were of play and joy, of humans and the warmth of his house. But there were times when his dreams veered into the shadows, the places where canines seldom tread, even in their imaginations.\n
     One such dream left a deep impression on Lorenzo’s canine consciousness, a dream that he carried into his waking hours, a nocturnal adventure that clung to his thoughts like an unwelcome burr on his short, brindle coat.\n
@@ -215,7 +218,7 @@ class DataManager: ObservableObject {
     Just when the figure was close enough for Lorenzo to make out its monstrous form, he woke up. His heart pounded against his chest, his eyes wide and alert. His dream had felt so real, so intense, that it took him a moment to realize he was back in his comfy bed, safe in his familiar world.\n
     It was just a dream, but it was one that shook Lorenzo. He panted, trying to calm his racing heart, his eyes scanning the quiet room. Everything was in its place, peaceful and serene. Yet, the chill from his nightmare still lingered, a stark contrast to the comfort of his house. Lorenzo rose, shaking off the remnants of the nightmare, padding softly, in his own way, to his masters and saw they were asleep and safe. He sighed, reassured by their presence, a sense of peace slowly replacing the fear his dream had evoked.\n
     The night wore on, and Lorenzo went back to sleep, ready to brave the world of dreams once more. He was calmer now. After all, Lorenzo was not just a bulldog, he was a guardian, a warrior, even in the face of his dreams. It was another night, another dream, and he was ready for whatever it would bring.
-""", audioFileName: "Audio3"),
+""", audios: [Audio(bookTitle: "Beast of Dreams", englishAudioFile: "Audio3", spanishAudioFile: "Audio3")]),
                 Book(title: "Beast of the Glades", imageName: "Beast5", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         I, Lorenzo, a stout English bulldog, walked with purpose as I trailed behind my humans. Their tall frames cast long, distorted shadows under the radiant Florida sun. My eyes, large and round, took in the panoramic display of wild grasses and mangrove clusters sprawled across the vast expanse of the Everglades.\n
         Our journey had begun from our home in Coconut Creek, equipped with tents, food, and their ceaseless chatter. As for me, I had my nose, my paws, and a keen sense of adventure. My coat, though thick and not suited for the Florida heat, bristled with anticipation.\n
@@ -230,7 +233,7 @@ class DataManager: ObservableObject {
         The creature, surprised and outnumbered, slithered back into the darkness from where it came. I stood my ground, panting heavily, watching as it disappeared into the marsh.\n
         The humans huddled around me, their hands, usually soft and gentle, gripping my fur. Their eyes, wide and with fear, were softening now, the ordeal slowly etching itself into the past. I, their brave beast of a bulldog, had faced the unknown, stood my ground, and triumphed.\n
         We left the Everglades the next morning, the humans chattering animatedly, their spirits lifted by the daylight. As for me, I walked with a swagger in my step, a canine hero in my own right, forever etched in the annals of a bulldog’s bravery in the wild land of the Everglades.
-    """, audioFileName: "Audio5"),
+    """, audios: [Audio(bookTitle: "Beast of the Glades", englishAudioFile: "Audio5", spanishAudioFile: "Audio5")]),
                 Book(title: "Hurricane Beast", imageName: "Beast7", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         As Lorenzo, a bulldog of regal heritage and noble countenance, I accompanied my human family a few years ago to temporarily stay at a towering hotel, the likes of which I’d never seen before. My eyes, however, were drawn to the unusual trees around us—the majestic palms, with their sprawling fronds dancing in the breeze.\n
         As we settled into the opulence of our hotel suite, I sniffed about, familiarizing myself with the alien surroundings, and not quite knowing the reason we were there. The palm fronds, though, remained an enigma, visible through the glass pane, a constant rustling of the world outside, and my adventurous spirit nudged me towards them.\n
@@ -242,7 +245,7 @@ class DataManager: ObservableObject {
         Just when I thought my end was near, the strong hand of my master grabbed my collar and pulled me back to safety. I found myself back in the hotel room, my humans surrounding me, their faces etched with relief and love. A piece of the palm frond was stuck under my collar, a symbol of my whirlwind adventure.\n
         As the storm passed and calm returned, the tale of my escapade was spoken in hushed whispers among the hotel guests. I was hailed as Lorenzo, the brave bulldog who danced with a hurricane. The palm fronds, once a symbol of tropical tranquility, became a testament to my adventurous spirit.\n
         And so, in the face of a tempest, I discovered not only the mystique of palm fronds but also the depth of my bravery and the enduring love of my human masters. As we prepared to return to our home, I looked back at the hotel, knowing that every time I would ever encounter another palm frond, I would remember this adventure and how it would be recounted for ages.
-    """, audioFileName: "Audio7"),
+    """, audios: [Audio(bookTitle: "Hurricane Beast", englishAudioFile: "Audio7", spanishAudioFile: "Audio7")]),
                 Book(title: "Whispers of the Wind", imageName: "Beast14", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         In a quiet community where the tops of buildings kissed the edges of the horizon, there lived an English Bulldog named Lorenzo. Every evening, as the sun dipped below the distant line of trees, he would make his way to his favorite chair on the patio that overlooked his small, simple world. It was his sacred ritual, his connection to something beyond what his eyes could see.\n
         Sitting on his chair, Lorenzo listened to the wind as it rustled through the grass and danced with the leaves. To him, these whispers of the wind were the stories of his ancestors, tales of courage and adventure that filled his heart with warmth as the world around him grew dark.\n
@@ -263,7 +266,7 @@ class DataManager: ObservableObject {
         Lorenzo, who had contemplated this himself on many occasions, looked out over his world stretched out in front of him and then back to his friend.\n
         “In the whispers of the wind,” Lorenzo rumbled gently, “I heard not just a call for help, but a call for purpose. I listened because…because I believed in the story the wind was telling me. And now, here with you, that story is complete.”\n
         At that moment, as the wind’s soft whispers wrapped around them like an age-old lullaby, Lorenzo and Ari sat as more than just friends; they were fellow storytellers, bound by the words shared under the watchful, starlit sky.
-    """, audioFileName: "Audio14"),
+    """, audios: [Audio(bookTitle: "Whispers of the Wind", englishAudioFile: "audio14", spanishAudioFile: "Audio14")]),
             ]),
             Category(name: "Adventure", books: [
                 Book(title: "HeartStrings", imageName: "Beast6", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
@@ -281,7 +284,7 @@ class DataManager: ObservableObject {
         She trotted towards me, her eyes gleaming with admiration. As she brushed her snout against mine, the world fell silent. I, Lorenzo, the beast of a bulldog, had won not just a trivial race, but the heart of the splendid Bella.\n
         From that day forth, Bella and I were inseparable. We walked together, and I would often find her waiting for me when I awoke from my afternoon slumbers. Maximus, though initially a rival, became a good friend.\n
         The saga of my jealousy became a tale of victory and love. Amidst my canine friends, I found a companion, a love. And all it took was a race, a stick, and a dogged determination to win back the heart of the beautiful Bella.
-    """, audioFileName: "Audio6"),
+    """, audios: [Audio(bookTitle: "HeartStrings", englishAudioFile: "Audio6", spanishAudioFile: "Audio6")]),
                 Book(title: "Park-Beast", imageName: "Beast9", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         Lorenzo, an English Bulldog of profound wisdom, had a sense of monotony that brewed in him. The days were filled with the same sounds, the same scents, and the same routines. Yet, Lorenzo felt a yearning for something more, something beyond the mundane.\n
         A new dog park had opened up near his home, a place that had become the subject of whispers and intrigue. Dogs were disappearing from the park, vanishing without a trace, and a shadow of mystery hang heavy over this seemingly ordinary gathering place. His masters, though unaware of these rumors, decided today would be a good day for Lorenzo to explore the realm of the park.\n
@@ -301,7 +304,7 @@ class DataManager: ObservableObject {
         Second-master had a fiery temper that was legendary. She could cuss out a misbehaving dog in Spanish, make a pot of the most delicious sancocho, and run a business meeting all at the same time. When she got angry, it was like watching a thunderstorm roll in—spectacular, a little scary, and not something you wanted to be on the wrong side of.\n
         She now turned this temper on the two drunk women, her eyes blazing with righteous indignation. “You two can’t be drunk around my dog or this park! Get out!” Her words rang out, echoing through the park. The women stiffened, then slunk away into the shadows, the threat of Second-master’s wrath evidently more terrifying than any possible retaliation.\n
         The mystery of the disappearing dogs was never fully solved. The old oak tree was cut down, and the two old women nor their German Shepherd were ever seen again. Lorenzo’s courage and his masters had saved him from an unknown fate, but the memory of that day lingered, a haunting reminder of the hidden dangers that can lurk even in the most ordinary places.
-    """, audioFileName: "Audio9"),
+    """, audios: [Audio(bookTitle: "Park-Beast", englishAudioFile: "Audio9", spanishAudioFile: "Audio9")]),
                 Book(title: "Beast of the Glades", imageName: "Beast5", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         I, Lorenzo, a stout English bulldog, walked with purpose as I trailed behind my humans. Their tall frames cast long, distorted shadows under the radiant Florida sun. My eyes, large and round, took in the panoramic display of wild grasses and mangrove clusters sprawled across the vast expanse of the Everglades.\n
         Our journey had begun from our home in Coconut Creek, equipped with tents, food, and their ceaseless chatter. As for me, I had my nose, my paws, and a keen sense of adventure. My coat, though thick and not suited for the Florida heat, bristled with anticipation.\n
@@ -316,7 +319,7 @@ class DataManager: ObservableObject {
         The creature, surprised and outnumbered, slithered back into the darkness from where it came. I stood my ground, panting heavily, watching as it disappeared into the marsh.\n
         The humans huddled around me, their hands, usually soft and gentle, gripping my fur. Their eyes, wide and with fear, were softening now, the ordeal slowly etching itself into the past. I, their brave beast of a bulldog, had faced the unknown, stood my ground, and triumphed.\n
         We left the Everglades the next morning, the humans chattering animatedly, their spirits lifted by the daylight. As for me, I walked with a swagger in my step, a canine hero in my own right, forever etched in the annals of a bulldog’s bravery in the wild land of the Everglades.
-    """, audioFileName: "Audio5"),
+    """, audios: [Audio(bookTitle: "Beast of the Glades", englishAudioFile: "Audio5", spanishAudioFile: "Audio5")]),
                 Book(title: "Whispers of the Wind", imageName: "Beast14", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         In a quiet community where the tops of buildings kissed the edges of the horizon, there lived an English Bulldog named Lorenzo. Every evening, as the sun dipped below the distant line of trees, he would make his way to his favorite chair on the patio that overlooked his small, simple world. It was his sacred ritual, his connection to something beyond what his eyes could see.\n
         Sitting on his chair, Lorenzo listened to the wind as it rustled through the grass and danced with the leaves. To him, these whispers of the wind were the stories of his ancestors, tales of courage and adventure that filled his heart with warmth as the world around him grew dark.\n
@@ -337,7 +340,7 @@ class DataManager: ObservableObject {
         Lorenzo, who had contemplated this himself on many occasions, looked out over his world stretched out in front of him and then back to his friend.\n
         “In the whispers of the wind,” Lorenzo rumbled gently, “I heard not just a call for help, but a call for purpose. I listened because…because I believed in the story the wind was telling me. And now, here with you, that story is complete.”\n
         At that moment, as the wind’s soft whispers wrapped around them like an age-old lullaby, Lorenzo and Ari sat as more than just friends; they were fellow storytellers, bound by the words shared under the watchful, starlit sky.
-    """, audioFileName: "Audio14"),
+    """, audios: [Audio(bookTitle: "Whispers of the Wind", englishAudioFile: "Audio14", spanishAudioFile: "Audio14")]),
             ]),
         ]
     }
@@ -361,7 +364,7 @@ class DataManager: ObservableObject {
     The noise stirred the household, and soon enough, lights flickered on. The sight that greeted them was of me, growling, with a strange rat cornered in the main master’s office and a watch at my feet. The outcome? Let’s just say that it is not every day a bulldog solves’ a mystery and catches a thief.\n
     As the sun rose that day, I lay on my favorite rug, thoroughly exhausted. I could still smell the remnants of that rat’s scent, but it was mixed with something else now—a note of pride and victory. I had protected my home, my family, and my territory. I closed my eyes, contented, ready for a well-deserved nap.\n
     And so, even in the peaceful realm of human knees, thrilling mysteries, and heroic sagas unfolded. After all, the world is full of mysteries to solve, especially if you’re a bulldog named Lorenzo.\n
-""", audioFileName: "Audio1"),
+""", audios: [Audio(bookTitle: "Lorenzo the Beast", englishAudioFile: "Audio1", spanishAudioFile: "Audio1")]),
             Book(title: "Beach-Beast", imageName: "Beast2", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
           Lorenzo, an English Bulldog of profound wisdom, had a sense of monotony that brewed in him. The days were filled with the same sounds, the same scents, and the same routines. Yet, Lorenzo felt a yearning for something more, something beyond the mundane.\n
         A new dog park had opened up near his home, a place that had become the subject of whispers and intrigue. Dogs were disappearing from the park, vanishing without a trace, and a shadow of mystery hang heavy over this seemingly ordinary gathering place. His masters, though unaware of these rumors, decided today would be a good day for Lorenzo to explore the realm of the park.\n
@@ -381,7 +384,7 @@ class DataManager: ObservableObject {
         Second-master had a fiery temper that was legendary. She could cuss out a misbehaving dog in Spanish, make a pot of the most delicious sancocho, and run a business meeting all at the same time. When she got angry, it was like watching a thunderstorm roll in—spectacular, a little scary, and not something you wanted to be on the wrong side of.\n
         She now turned this temper on the two drunk women, her eyes blazing with righteous indignation. “You two can’t be drunk around my dog or this park! Get out!” Her words rang out, echoing through the park. The women stiffened, then slunk away into the shadows, the threat of Second-master’s wrath evidently more terrifying than any possible retaliation.\n
         The mystery of the disappearing dogs was never fully solved. The old oak tree was cut down, and the two old women nor their German Shepherd were ever seen again. Lorenzo’s courage and his masters had saved him from an unknown fate, but the memory of that day lingered, a haunting reminder of the hidden dangers that can lurk even in the most ordinary places
-""", audioFileName: "Audio2"),
+""", audios: [Audio(bookTitle: "Beach-Beast", englishAudioFile: "Audio2", spanishAudioFile: "Audio2")]),
             Book(title: "Beast of Dreams", imageName: "Beast3", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     In the world of Lorenzo, a robust handsome bulldog of remarkable courage and quiet curiosity, dreams were not just an escape to the realm of slumber but were also riddled with stories. Often they were of play and joy, of humans and the warmth of his house. But there were times when his dreams veered into the shadows, the places where canines seldom tread, even in their imaginations.\n
     One such dream left a deep impression on Lorenzo’s canine consciousness, a dream that he carried into his waking hours, a nocturnal adventure that clung to his thoughts like an unwelcome burr on his short, brindle coat.\n
@@ -401,7 +404,7 @@ class DataManager: ObservableObject {
     Just when the figure was close enough for Lorenzo to make out its monstrous form, he woke up. His heart pounded against his chest, his eyes wide and alert. His dream had felt so real, so intense, that it took him a moment to realize he was back in his comfy bed, safe in his familiar world.\n
     It was just a dream, but it was one that shook Lorenzo. He panted, trying to calm his racing heart, his eyes scanning the quiet room. Everything was in its place, peaceful and serene. Yet, the chill from his nightmare still lingered, a stark contrast to the comfort of his house. Lorenzo rose, shaking off the remnants of the nightmare, padding softly, in his own way, to his masters and saw they were asleep and safe. He sighed, reassured by their presence, a sense of peace slowly replacing the fear his dream had evoked.\n
     The night wore on, and Lorenzo went back to sleep, ready to brave the world of dreams once more. He was calmer now. After all, Lorenzo was not just a bulldog, he was a guardian, a warrior, even in the face of his dreams. It was another night, another dream, and he was ready for whatever it would bring.
-""", audioFileName: "Audio3"),
+""", audios: [Audio(bookTitle: "Beast of Dreams", englishAudioFile: "Audio3", spanishAudioFile: "Audio3")]),
             Book(title: "Beast of Love", imageName: "Beast4", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     Summer had arrived, sprinkling it with colors and scents that drew Lorenzo, the stunningly handsome Bulldog, from his usually leisurely lounging. The familiar surroundings of his home and balcony no longer seemed sufficient. There was an itch, a pull that stirred something within him—a yearning for companionship, for a partner, for love.\n
     As his masters took him for his daily walk around the community, Lorenzo strayed and pulled on the leash, from his usual path. His nose caught the scent of another—a scent that was new, yet somehow inviting. His heart thumped in his chest, his muscles tensing in anticipation.\n
@@ -413,7 +416,7 @@ class DataManager: ObservableObject {
     Their masters noticed it too—their playfulness, their bond, their unspoken affection. Smiles and loving head scratches were showered on the two Bulldogs in love, reinforcing the growing bond between Lorenzo and Bella.\n
     One day, as the leaves from the Oak tree rained around them like green snowflakes, Lorenzo nuzzled Bella. His heart pounding, his affection for her impossible to contain. Bella responded, nuzzling him back, their connection cemented in that simple, yet profound, gesture.\n
     Their love story wasn’t extravagant or dramatic. It was simple, pure—a meeting of two beasts under the Oak tree, a connection that transcended words, a relationship that only they understood.
-""", audioFileName: "Audio4"),
+""", audios: [Audio(bookTitle: "Beast of Love", englishAudioFile: "Audio4", spanishAudioFile: "Audio4")]),
             Book(title: "Beast of the Glades", imageName: "Beast5", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     I, Lorenzo, a stout English bulldog, walked with purpose as I trailed behind my humans. Their tall frames cast long, distorted shadows under the radiant Florida sun. My eyes, large and round, took in the panoramic display of wild grasses and mangrove clusters sprawled across the vast expanse of the Everglades.\n
     Our journey had begun from our home in Coconut Creek, equipped with tents, food, and their ceaseless chatter. As for me, I had my nose, my paws, and a keen sense of adventure. My coat, though thick and not suited for the Florida heat, bristled with anticipation.\n
@@ -428,7 +431,7 @@ class DataManager: ObservableObject {
     The creature, surprised and outnumbered, slithered back into the darkness from where it came. I stood my ground, panting heavily, watching as it disappeared into the marsh.\n
     The humans huddled around me, their hands, usually soft and gentle, gripping my fur. Their eyes, wide and with fear, were softening now, the ordeal slowly etching itself into the past. I, their brave beast of a bulldog, had faced the unknown, stood my ground, and triumphed.\n
     We left the Everglades the next morning, the humans chattering animatedly, their spirits lifted by the daylight. As for me, I walked with a swagger in my step, a canine hero in my own right, forever etched in the annals of a bulldog’s bravery in the wild land of the Everglades.
-""", audioFileName: "Audio5"),
+""", audios: [Audio(bookTitle: "Beast of the Glades", englishAudioFile: "Audio5", spanishAudioFile: "Audio5")]),
             Book(title: "HeartStrings", imageName: "Beast6", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     Beneath the hot Florida skies, I, Lorenzo, an English bulldog of some repute, found my world upended one day since I first met Bella. I found that my once unruffled existence had been stirred in her presence.\n
     Bella was a sight to behold, a lustrous speckled creature of my same breed, with fur as white as snow, splattered with brindle patches. She had an air about her that was both demure and commanding. The days that followed our initial meeting under the oak tree have caused my heart to pulsate with a rhythm unknown to me before.\n
@@ -444,7 +447,7 @@ class DataManager: ObservableObject {
     She trotted towards me, her eyes gleaming with admiration. As she brushed her snout against mine, the world fell silent. I, Lorenzo, the beast of a bulldog, had won not just a trivial race, but the heart of the splendid Bella.\n
     From that day forth, Bella and I were inseparable. We walked together, and I would often find her waiting for me when I awoke from my afternoon slumbers. Maximus, though initially a rival, became a good friend.\n
     The saga of my jealousy became a tale of victory and love. Amidst my canine friends, I found a companion, a love. And all it took was a race, a stick, and a dogged determination to win back the heart of the beautiful Bella.
-""", audioFileName: "Audio6"),
+""", audios: [Audio(bookTitle: "HeartStrings", englishAudioFile: "Audio6", spanishAudioFile: "Audio6")]),
             Book(title: "Hurricane Beast", imageName: "Beast7", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     As Lorenzo, a bulldog of regal heritage and noble countenance, I accompanied my human family a few years ago to temporarily stay at a towering hotel, the likes of which I’d never seen before. My eyes, however, were drawn to the unusual trees around us—the majestic palms, with their sprawling fronds dancing in the breeze.\n
     As we settled into the opulence of our hotel suite, I sniffed about, familiarizing myself with the alien surroundings, and not quite knowing the reason we were there. The palm fronds, though, remained an enigma, visible through the glass pane, a constant rustling of the world outside, and my adventurous spirit nudged me towards them.\n
@@ -456,7 +459,7 @@ class DataManager: ObservableObject {
     Just when I thought my end was near, the strong hand of my master grabbed my collar and pulled me back to safety. I found myself back in the hotel room, my humans surrounding me, their faces etched with relief and love. A piece of the palm frond was stuck under my collar, a symbol of my whirlwind adventure.\n
     As the storm passed and calm returned, the tale of my escapade was spoken in hushed whispers among the hotel guests. I was hailed as Lorenzo, the brave bulldog who danced with a hurricane. The palm fronds, once a symbol of tropical tranquility, became a testament to my adventurous spirit.\n
     And so, in the face of a tempest, I discovered not only the mystique of palm fronds but also the depth of my bravery and the enduring love of my human masters. As we prepared to return to our home, I looked back at the hotel, knowing that every time I would ever encounter another palm frond, I would remember this adventure and how it would be recounted for ages.
-""", audioFileName: "Audio7"),
+""", audios: [Audio(bookTitle: "Hurricane Beast", englishAudioFile: "Audio7", spanishAudioFile: "Audio7")] ),
             Book(title: "Vet of Beasts", imageName: "Beast8", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     Through the narrow slits of my eyes, the first light of dawn painted the room in soft hues. I, Lorenzo, was sprawled on my plush bed, my brindle coat contrasting against the cream fabric. The world was quiet, the humans still locked in the dream world. I relished the solitude, the tranquility, for I knew today was a day of reckoning. Today, I would visit the dreaded vet.\n
     The car ride was filled with the hum of the unknown. Trees and roads sped by, but my mind was on the forthcoming battle. My masters tried to soothe me, but I could sense their trepidation too. We were venturing into the wild unknown together, bonded in courage and resolve. \n
@@ -473,7 +476,7 @@ class DataManager: ObservableObject {
     The check-up concluded, my masters were filled with pride, and I knew I had faced and conquered this unknown frontier. As we left the room, I looked back at the doctor, a newfound respect in my eyes. We had danced at the edge of the wild, and I had emerged stronger, a civilized beast with the heart of a warrior.\n
     Upon returning home, my human masters showered me with affection, rewarding my bravery with my favorite treats. As I gnawed on my bone, the traces of the day’s adventure gradually faded, replaced by the comforting rhythm of the ordinary.\n
     The adventure to the vet, a yearly thriller in my otherwise peaceful life, had come to a end. It was an odyssey, a challenge I had to face, but with every visit, I discovered a newfound courage within myself. After all, even the most reluctant heroes must face their dragons, even if the dragon is a benign vet with a nail clipper.
-""", audioFileName: "Audio8"),
+""", audios: [Audio(bookTitle: "Vet of Beasts", englishAudioFile: "Audio8", spanishAudioFile: "Audio8")]),
             Book(title: "Park-Beast", imageName: "Beast9", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     Lorenzo, an English Bulldog of profound wisdom, had a sense of monotony that brewed in him. The days were filled with the same sounds, the same scents, and the same routines. Yet, Lorenzo felt a yearning for something more, something beyond the mundane.\n
     A new dog park had opened up near his home, a place that had become the subject of whispers and intrigue. Dogs were disappearing from the park, vanishing without a trace, and a shadow of mystery hang heavy over this seemingly ordinary gathering place. His masters, though unaware of these rumors, decided today would be a good day for Lorenzo to explore the realm of the park.\n
@@ -493,7 +496,7 @@ class DataManager: ObservableObject {
     Second-master had a fiery temper that was legendary. She could cuss out a misbehaving dog in Spanish, make a pot of the most delicious sancocho, and run a business meeting all at the same time. When she got angry, it was like watching a thunderstorm roll in—spectacular, a little scary, and not something you wanted to be on the wrong side of.\n
     She now turned this temper on the two drunk women, her eyes blazing with righteous indignation. “You two can’t be drunk around my dog or this park! Get out!” Her words rang out, echoing through the park. The women stiffened, then slunk away into the shadows, the threat of Second-master’s wrath evidently more terrifying than any possible retaliation.\n
     The mystery of the disappearing dogs was never fully solved. The old oak tree was cut down, and the two old women nor their German Shepherd were ever seen again. Lorenzo’s courage and his masters had saved him from an unknown fate, but the memory of that day lingered, a haunting reminder of the hidden dangers that can lurk even in the most ordinary places.
-""", audioFileName: "Audio9"),
+""", audios: [Audio(bookTitle: "Park-Beast", englishAudioFile: "Audio9", spanishAudioFile: "Audio9")]),
             Book(title: "Mockingbird Mystery", imageName: "Beast10", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
         Lorenzo, an English Bulldog of profound wisdom, had a sense of monotony that brewed in him. The days were filled with the same sounds, the same scents, and the same routines. Yet, Lorenzo felt a yearning for something more, something beyond the mundane.\n
         A new dog park had opened up near his home, a place that had become the subject of whispers and intrigue. Dogs were disappearing from the park, vanishing without a trace, and a shadow of mystery hang heavy over this seemingly ordinary gathering place. His masters, though unaware of these rumors, decided today would be a good day for Lorenzo to explore the realm of the park.\n
@@ -513,7 +516,7 @@ class DataManager: ObservableObject {
         Second-master had a fiery temper that was legendary. She could cuss out a misbehaving dog in Spanish, make a pot of the most delicious sancocho, and run a business meeting all at the same time. When she got angry, it was like watching a thunderstorm roll in—spectacular, a little scary, and not something you wanted to be on the wrong side of.\n
         She now turned this temper on the two drunk women, her eyes blazing with righteous indignation. “You two can’t be drunk around my dog or this park! Get out!” Her words rang out, echoing through the park. The women stiffened, then slunk away into the shadows, the threat of Second-master’s wrath evidently more terrifying than any possible retaliation.\n
         The mystery of the disappearing dogs was never fully solved. The old oak tree was cut down, and the two old women nor their German Shepherd were ever seen again. Lorenzo’s courage and his masters had saved him from an unknown fate, but the memory of that day lingered, a haunting reminder of the hidden dangers that can lurk even in the most ordinary places.
-""", audioFileName: "Audio10"),
+""", audios: [Audio(bookTitle: "Mockingbird Mystery", englishAudioFile: "Audio10", spanishAudioFile: "Audio10")]),
             Book(title: "Intruders meet the Beast", imageName: "Beast11", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     The winds carried change, an unsettling hint of newness to the world Lorenzo knew. The residence, two doors down, had lain vacant for months, the decaying scent of abandonment replaced by a musky, canine aroma. It was unlike any dog Lorenzo had ever sensed. This was a disciplined, professional aura. Not the typical domesticated canine who played fetch.\n
     Lorenzo, with his stout build and droopy jowls, might not look like the sharpest tool in the shed, but beneath that bulky exterior lay a keen observer.\n
@@ -553,7 +556,7 @@ class DataManager: ObservableObject {
     As sirens wailed in the distance, Officer Mays and his team closed in. Bruno winked at Lorenzo, “Nice teamwork.”\n
      Lorenzo, still sporting his bottom teeth in a victorious grin, “Just another day in the neighborhood.”\n
     Lorenzo and Bruno’s home once again found its peace. The bond between the big city’s police K9 and the local brave Bulldog became legendary. And in the heart of suburban life, two dogs, against all odds, became the most unexpected of allies.
-""", audioFileName: "Audio11"),
+""", audios: [Audio(bookTitle: "Intruders meet the Beast", englishAudioFile: "Audio11", spanishAudioFile: "Audio11")]),
             Book(title: "Beast Captain", imageName: "Beast12", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     In the dappled light of the late morning sun, Lorenzo the Bulldog lay sprawled across the cool floor of his patio, every muscle in his stocky body luxuriously relaxed. His dark, thoughtful eyes, framed by deep wrinkles, were half-closed in that serene space between waking and dreaming.\n
     In this tranquil state, Lorenzo’s mind wandered far from the quiet comforts of his home. He found himself not on the cool patio floor, but on the deck of a grand ship, the salty spray of the sea misting against his broad, handsome face. As the vessel rocked gently on the waves, he could hear the cry of distant gulls and the creaking of the ship’s timbers—a melody as timeless as the tides.\n
@@ -571,7 +574,7 @@ class DataManager: ObservableObject {
     In his vivid imagination, Captain Lorenzo steered his ship through crystalline Caribbean waters and biting Artic mists alike. He traded tales and treats with exotic breeds of far-off ports, each a storied adventurer in their own right. They respected him, not for his pedigree, but for his wisdom and unwavering sense of justice.\n
     In the real world, a gentle hand descending to scratch behind his ears slowly pulled Lorenzo back from the salt and wind of his nautical fantasy. The familiar scent of his master, coupled with the soft, rhythmic cadence of her voice, anchored him to reality once more.\n
     As he sighed, relinquishing the helm of his dream ship and feeling his solid, patio floor beneath him once again, Lorenzo couldn’t help but carry a piece of the adventure with him. His eyes, when they blinked open, held the spark of untamed seas and uncharted territories, and in his heart, the beast in him echoed just a little bit.
-""", audioFileName: "Audio12"),
+""", audios: [Audio(bookTitle: "Beast Captain", englishAudioFile: "Audio12", spanishAudioFile: "Audio12")]),
             Book(title: "Dream-Free", imageName: "Beast13", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     In the quietude of his thoughts, Lorenzo let his imagination unfurl like a vibrant, boundless tapestry. It was a world untouched by time’s remorseless march, where lush meadows kissed the horizon and rivers danced like silver threads under the golden sun. In this tranquil reverie, Lorenzo saw himself not as a lone wanderer, but as a leader, a guardian.\n
     There, in that vibrant dreamscape, he led a noble pack of dogs through rolling fields, each one a companion, a brother, a sister. The Bulldogs were strong and steadfast, mirroring his own sturdy demeanor. Together, they raced through fields of wildflowers, where the scent of blooming lavender and honeysuckle hung sweetly in the air.\n
@@ -592,7 +595,7 @@ class DataManager: ObservableObject {
     With a hearty laugh that boomed like thunder, Lorenzo responded, "Then let us roar like the storm, young Milo!"\n
     And so, they ran, not towards a destination, but into the very essence of life itself, each heartbeat a declaration of unity and every breath a song of freedom. In this moment, under the expansive sky, Lorenzo and his pack were not merely dogs; they were the living embodiment of the wild, untamed spirit that thrummed through the world.\n
     With that, Lorenzo awoke from his daydream, the vivid hues of his imagined world lingering like a promise as he focused again on his real world. He loved his masters, his life with them, and more. Yet, sometimes he hoped that his daydreams may someday breathe life.
-""", audioFileName: "Audio13"),
+""", audios: [Audio(bookTitle: "Dream-Free", englishAudioFile: "Audio13", spanishAudioFile: "Audio13")]),
             Book(title: "Whispers of the Wind", imageName: "Beast14", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     In a quiet community where the tops of buildings kissed the edges of the horizon, there lived an English Bulldog named Lorenzo. Every evening, as the sun dipped below the distant line of trees, he would make his way to his favorite chair on the patio that overlooked his small, simple world. It was his sacred ritual, his connection to something beyond what his eyes could see.\n
     Sitting on his chair, Lorenzo listened to the wind as it rustled through the grass and danced with the leaves. To him, these whispers of the wind were the stories of his ancestors, tales of courage and adventure that filled his heart with warmth as the world around him grew dark.\n
@@ -613,7 +616,7 @@ class DataManager: ObservableObject {
     Lorenzo, who had contemplated this himself on many occasions, looked out over his world stretched out in front of him and then back to his friend.\n
     “In the whispers of the wind,” Lorenzo rumbled gently, “I heard not just a call for help, but a call for purpose. I listened because…because I believed in the story the wind was telling me. And now, here with you, that story is complete.”\n
     At that moment, as the wind’s soft whispers wrapped around them like an age-old lullaby, Lorenzo and Ari sat as more than just friends; they were fellow storytellers, bound by the words shared under the watchful, starlit sky.
-""", audioFileName: "Audio14"),
+""", audios: [Audio(bookTitle: "Whispers of the Wind", englishAudioFile: "Audio14", spanishAudioFile: "Audio14")]),
             Book(title: "Silent Whiskers", imageName: "Beast15", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     Lorenzo, with his hefty gait and an expression of perceptual thoughtfulness, was no stranger
     to adventure. The world was vast, and even the local pet store held its secrets. On this particular day, under a clouded sky that threatened rain, he was led into “Pet Haven” the pet-friendly store his masters frequented. Little did he know that he was about to be thrust into a mystery that would challenge his wits and resolve.\n
@@ -641,7 +644,7 @@ class DataManager: ObservableObject {
     Startled and overwhelmed, Mr. Greeves dropped his phone and out scampered Mr. Whiskers from a small cage he had been preparing for transport.\n
     The store owner and Lorenzo’s masters, alerted by the commotion, discovered the treachery of the assistant manager. Mr. Greeves was handed over to the authorities, and peace returned to Pet Haven.\n
     Lorenzo, the gentle bulldog, left the store with not just a new chew toy but a reputation as the dog who had unveiled a mystery that had gripped the very heart of Pet Haven. And while he relished the extra treats he received, it was the nod of respect from Mr. Whiskers that he cherished most.
-""", audioFileName: "Audio15"),
+""", audios: [Audio(bookTitle: "Silent Whiskers", englishAudioFile: "Audio15", spanishAudioFile: "Audio15")]),
             Book(title: "Secret-Place", imageName: "Beast16", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     In the cool shadows of the morning, Lorenzo, with his handsome face and muscular frame, stared out of the window of his master’s truck. The breeze playfully ruffled his fur, a gentle prelude to what was traditionally a day of frolic and delight. As they neared their usual picnic spot on the edge of the Everglades, Lorenzo’s heart raced with anticipation. However, as the truck pulled closer, the scene that met his eyes was one of devastation.\n
     The thick canopy of trees, the lush foliage that usually provided shade, and the faint echo of the swamp’s life had vanished. In their place, rising monoliths of concrete and iron skeletons told a story of human progress at nature’s expense. The vast expanse was now littered with signs boasting about the upcoming townhomes.\n
@@ -666,7 +669,7 @@ class DataManager: ObservableObject {
     Lorenzo’s eyes twinkled in the tree filtered light. “Until then, let’s cherish what we have, and make the most of every moment.”\n
     Just then, Lorenzo could hear his master’s voices as they were getting closer to the secret  place. “I’d better get back to them.” He told the deer and they nodded in gratitude, wishing him well.\n
     Days later, as he sat upon his favorite patio chair, looking out over his small community, Lorenzo realized that sometimes, even in the face of relentless progress, there were pockets of hope. And in these pockets, life, with its undying spirit, would always find away.
-""", audioFileName: "Audio16"),
+""", audios: [Audio(bookTitle: "Secret-Place", englishAudioFile: "Audio16", spanishAudioFile: "Audio16")]),
             Book(title: "Beast of El 18", imageName: "Beast17", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     Amid the vibrant and varied terrains of Cali, where the lush rainforests met the expansive vistas, a young English Bulldog named Lorenzo came into the world. Born in the shadow of El 18, that towering peak, that seemed to touch the sky, Lorenzo’s early days were filled with the sounds of exotic birds, the fragrances of wild orchids, and the mesmerizing cadence of rain dancing on broad green leaves.\n
     The first thing Lorenzo remembered was the warmth of his mother’s body, the rhythmic lull of her heartbeat as he nestled close. Her stories painted vivid tapestries in his young mind, tales of her daring escapades through the pathways of EL 18. “The forest,” she would say, her voice laced with wonder and a hint of mystery, “is not just trees and trails. It’s alive, and it speaks to those who listen.”\n
@@ -694,7 +697,7 @@ class DataManager: ObservableObject {
     Yet with all the novelties Florida offered, there was an irreplaceable piece of his heart that remained nestled deep within the Colombian rainforest. Each evening, as the twilight hues painted the Florida skies, Lorenzo would find his favorite chair, often on the patio, and let his mind wander. The vibrant chatter of the capuchin monkeys, the mystical calls of the parrots, and the fresh scent of the rain-soaked earth would fill his senses.\n
     He would often dream of racing through the dense undergrowth, the wind ruffling his fur, with his old friends by his side. Memories of his parent’s tales, the wisdom of Don Jose the parrot, and the camaraderie he’d found among the forest creatures were treasures he held close. They were the stories of his youth, the chronicles of his heritage.\n
     In the heart of South Florida, amidst the sprawling urban jungle, Lorenzo carried with him the spirit of EL 18, a testament to his journey, a bridge between his past and the present, forever reminding him of who he was and where he came from.
-""", audioFileName: "Audio17"),
+""", audios: [Audio(bookTitle: "Beast of El 18", englishAudioFile: "Audio17", spanishAudioFile: "Audio17")]),
             Book(title: "Forgotten Garden", imageName: "Beast18", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     Lorenzo’s paws met the pavement in a rhythmic pattern, announcing his presence in the neighborhood. Every morning, he’d explore familiar haunts with his masters, each with their rituals. Yet amidst these routines, a solitary garden sat ensconced in walls of ivy and whispers of yore.\n
     The garden was always locked. His masters often commented on it with wistful curiosity. “I wonder what it’s like in there.” His master would mumble, and second master would nod in agreement.\n
@@ -725,7 +728,7 @@ class DataManager: ObservableObject {
     Second master, with a twinkle in her eye, replied, “Or perhaps, this garden understands him.”\n
     Lorenzo, with newfound friends around him, realized that some mysteries were meant to be shared, not solved. The garden was not just soil and plants; it was memories and stories, held together by the threads of time.\n
     As the sun began its descent, casting golden hues around, Lorenzo led his masters out, the gate closing gently behind them. The world outside remained oblivious to the magic within, but for a bulldog named Lorenzo and his masters, the garden would forever be their shared secret—a path of mystery in an otherwise ordinary world.
-""", audioFileName: "Audio18"),
+""", audios: [Audio(bookTitle: "Forgotten Garden", englishAudioFile: "Audio18", spanishAudioFile: "Audio18")] ),
             Book(title: "Daydream Beast", imageName: "Beast19", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
     In the dappled light of the late morning sun, Lorenzo the Bulldog lay sprawled across the cool floor of his patio, every muscle in his stocky body luxuriously relaxed. His dark thoughtful eyes, framed by deep wrinkles, were half-closed in that serene space between waking and dreaming.\n
     In this tranquil state, Lorenzo’s mind wandered from his home. He found himself not on a cool patio floor, but lounging in a penthouse high above the ceaseless hum of the city. Here, amid velvet cushions and warm sunbeams, his days passed in luxurious languor. His masters, in this daydream, constantly showered him with treats and affection. To Lorenzo, the world beyond his windows was but a distant spectacle, a theater of lights and shadows that played out far below.\n
@@ -753,8 +756,28 @@ class DataManager: ObservableObject {
     The three of them united in their shared experiences, watched as the city lights began to twinkle under the encroaching darkness, signaling the end of another day in their urban jungle.\n
     In the real world, a gentle hand descending to scratch behind his ears slowly pulled Lorenzo back from the harsh, emotional intricacies of his urban daydream. The familiar scent of his master, coupled with the soft, rhythmic cadence of her voice, anchored him to reality once more.\n
     As he sighed, relinquishing the intensity of his imagined emotions while feeling the solid patio floor beneath him once again, Lorenzo couldn’t help but carry a piece of the adventure with him. His eyes, when they blinked open, held the spark of untamed streets and uncharted territories, and in his heart, the wild beast inside him echoed just a little bit louder.
-""", audioFileName: "Audio19"),
-            Book(title: "BeastTwenty", imageName: "Beast20", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: "This story starts off from the beginning", audioFileName: "Audio20"),
+""", audios: [Audio(bookTitle: "Daydream Beast", englishAudioFile: "Audio19", spanishAudioFile: "Audio19")]),
+            Book(title: "The Phantom Squirrel", imageName: "Beast20", logo: "BeastIcon", color: Color(#colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)), description: "A story about the Beast", story: """
+    In the heart of a suburban neighborhood, where the evenings were painted in soft hues of twilight and the mornings greeted with the chirping of birds, lived Lorenzo, a stout and wise English Bulldog. His days were filled with the familiar routine of patrols around his backyard, guarding his territory against intruders, and lounging in the warm sun. But lately, something had disrupted his peaceful existence.\n
+    The squirrels, usually bustling about with their acorns and playful chatter, had started behaving strangely. Their usual scurrying and chattering had been replaced with furtive glances and hurried movements. One by one, they began to disappear, their absence leaving an eerie silence in the once lively backyard.\n
+    Lorenzo, with his keen instincts, knew something was amiss. His curiosity piqued, he decided to investigate. On a particularly crisp morning, as the dew still clung to the blades of grass, he saw Whiskers, the local cat known for her bravery and sharp wit, lounging lazily on the fence.\n
+    “Whiskers,” Lorenzo called out, his deep voice carrying a note of concern, “have you noticed anything strange about the squirrels lately?”\n
+    Whiskers, her emerald eyes glinting with curiosity, stretched and leaped down gracefully. “I have,” she replied, her tone serious. “They’ve been acting peculiar, and I’ve seen them vanishing into the ground near the old oak.”\n
+    Intrigued, Lorenzo and Whiskers decided to join forces. The old oak stood like a silent sentinel in the corner of the yard, its roots sprawling out like ancient fingers. The duo approached the tree cautiously. Lorenzo’s nose twitched as he picked up a scent—a mixture of earth and something unfamiliar.\n
+    “There,” Whiskers pointed with a flick of her tail. Hidden beneath a tangle of roots was a small, well-concealed burrow.\n
+    Lorenzo began to dig, his powerful paws working through the soil, revealing the entrance to the burrow. Whiskers, agile and slender, slipped inside first, followed closely by Lorenzo. The tunnel was dark and damp, but the determined pair pressed on.\n
+    As they reached the end of the tunnel, they found a large underground chamber. The sight that greeted them was astonishing—piles of food supplies, acorns, nuts, and even stolen bird seeds were heaped in chaotic mounds. And amidst this treasure trove stood the figure of an unusually large and scruffy squirrel.\n
+    “What is this place?” Lorenzo demanded, his deep growl resonating through the chamber.\n
+    The scruffy squirrel, taken aback by the sudden intrusion, straightened up defensively. “Who dares to invade my domain?” he snarled.\n
+    “I am Lorenzo, and this is Whiskers. We’ve come to find out why the squirrels have been disappearing.”\n
+    The scruffy squirrel hesitated, then sighed, his shoulders sagging. “I am Rusty. The truth is, we’ve been preparing for a harsh winter. But it’s not just for us. We’ve been driven by fear—fear of not having enough, fear of the unknown. So, we began hoarding everything we could find.”\n
+    Lorenzo, his heart softening, realized that the squirrels were not the villains but victims of their own anxieties. “Rusty,” he said gently, “there’s no need for such drastic measures. We can share and ensure everyone has enough.”\n
+    Whiskers nodded in agreement. “The neighborhood has plenty of resources. If we work together, we can prepare for winter without resorting to theft.”\n
+    Rusty, his eyes glistening with relief, agreed to return the stolen supplies. With Lorenzo and Whiskers leading the way, they emerged from the burrow, the sunlight casting a warm glow on their fur.\n
+    In the days that followed, the backyard was filled with the hustle and bustle of cooperation. Animals from all corners of the neighborhood came together, sharing and storing supplies, preparing for the winter ahead. The squirrels, once isolated by their fears, were now an integral part of the community.\n
+    And Lorenzo, as he lay under the shade of the old oak, felt a deep sense of satisfaction. He had uncovered a mystery, forged a new friendship with Whiskers, and brought harmony back to his backyard. The phantom squirrel was no longer a figure of fear but a symbol of unity and resilience.\n
+    As the first snowflakes of winter began to fall, Lorenzo knew that they were ready for whatever challenges lay ahead. Together, they would face the cold, their hearts warmed by the bonds they had forged and the lessons they had learned.
+""", audios: [Audio(bookTitle: "The Phantom Squirrel", englishAudioFile: "Audio20", spanishAudioFile: "Audio20")] ),
           ]
 
 

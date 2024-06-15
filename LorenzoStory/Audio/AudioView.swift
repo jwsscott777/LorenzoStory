@@ -10,7 +10,8 @@ import AVKit
 
 struct AudioView: View {
     var book: Book
-    let audioFile: String
+    var audio: Audio
+   // let audioFile: String
 
     @State private var player: AVAudioPlayer?
     @State private var isPlaying = false
@@ -20,9 +21,19 @@ struct AudioView: View {
         VStack {
             ZStack {
                 HStack {
-                    ModifiedButtonView(image: "arrow.left")
+                    NavigationLink {
+                        //
+                    } label: {
+                        ModifiedButtonView(image: "arrow.left")
+                    }
+
                     Spacer()
-                    ModifiedButtonView(image: "pawprint")
+                    NavigationLink {
+                        AboutView()
+                    } label: {
+                        ModifiedButtonView(image: "pawprint")
+                    }
+
                 }
                 Text("Now Playing")
                     .fontWeight(.bold)
@@ -121,7 +132,14 @@ struct AudioView: View {
             updateProgress()
         }
     }
+    // New func
+    func currentLocalization() -> String {
+        return Locale.current.language.languageCode?.identifier ?? "en"
+    }
+
     private func setupAudio() {
+        let localization = currentLocalization()
+                let audioFile = localization == "es" ? audio.spanishAudioFile : audio.englishAudioFile
         guard let url = Bundle.main.url(forResource: audioFile, withExtension: "mp3") else {
             print("Audio file not found")
             return
@@ -167,7 +185,7 @@ struct AudioView: View {
 }
 
 #Preview {
-    AudioView(book: books[0], audioFile: "")
+    AudioView(book: books[0], audio: Audio(bookTitle: "The Phantom Squirrel", englishAudioFile: "Audio20", spanishAudioFile: "Audio20"))
 }
 
 struct ModifiedButtonView: View {
@@ -194,3 +212,4 @@ struct ModifiedButtonView: View {
                 )
     }
 }
+

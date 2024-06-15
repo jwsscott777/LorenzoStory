@@ -12,8 +12,6 @@ struct BookDetailView: View {
     @State private var fontSize: CGFloat = 20
     @State private var fontColor: Color = .white
     @State private var isShowingTextStyleAdjustmentView = false
-
-
     private var backButton: some View {
         Button(action: {
             isShowingTextStyleAdjustmentView.toggle()
@@ -37,7 +35,6 @@ struct BookDetailView: View {
                     .background(book.color)
                     .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
                     .shadow(color: book.color.opacity(0.3), radius: 20, x: 0, y: 10)
-
                     VStack {
                        logoSection
                         storySection
@@ -90,16 +87,18 @@ struct BookDetailView: View {
                 .frame(width: 80, height: 80)
                 .padding()
 
-            NavigationLink(destination: AudioView(book: book, audioFile: book.audioFileName)) {
-                Text("Prefer to Listen?")
-                    .font(.callout)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.white)
-                    .padding()
-                    .background {
-                        Capsule()
-                            .fill(Color.accentColor.gradient)
-                    }
+            ForEach(book.audios) { audio in
+                NavigationLink(destination: AudioView(book: book, audio: audio)) {
+                    Text("Prefer to Listen?")
+                        .font(.callout)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background {
+                            Capsule()
+                                .fill(Color.accentColor.gradient)
+                        }
+                }//
             }
         }
     }

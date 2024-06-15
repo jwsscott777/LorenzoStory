@@ -49,12 +49,13 @@ struct IntroView: View {
                         StoryListView()
                     }
                     .padding(.top, 10)
+                    .padding(.bottom, 60)
                     .zIndex(0)
                 }
                 .overlay(alignment: .top) {
                     HeaderView()
                 }
-            }
+            } // scroll
             .coordinateSpace(name: "SCROLL")
             .ignoresSafeArea()
             .sheet(isPresented: $showAboutView, content: {
@@ -133,12 +134,12 @@ struct IntroView: View {
             let progress = minY / (height * (minY > 0 ? 0.5 : 0.8))
             let titleProgress = minY / height
             HStack(spacing: 15) {
-                Text("Hey")
+                Text("Hello")
                     .font(.caption)
                     .foregroundStyle(.white)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 6)
-                    .border(.white, width: 1.5)
+                 //   .border(.white, width: 1.5)
                     .opacity(1 + progress)
                 Spacer(minLength: 0)
                 Text("There")
@@ -147,7 +148,7 @@ struct IntroView: View {
                     .foregroundStyle(.white)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 6)
-                    .border(.white, width: 1.5)
+                 //   .border(.white, width: 1.5)
                     .opacity(1 + progress)
             }
             .overlay(content: {
