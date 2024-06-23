@@ -55,6 +55,12 @@
 		0592AC042C0C0278005A71D3 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592AC032C0C0278005A71D3 /* IntroPage.swift */; };
 		0592AC062C0CF217005A71D3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592AC052C0CF217005A71D3 /* AboutView.swift */; };
 		0592AC082C0CFE6C005A71D3 /* TextStyleAdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592AC072C0CFE6C005A71D3 /* TextStyleAdjustmentView.swift */; };
+		05B88CB32C1F2BAA0022F114 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B88CB22C1F2BAA0022F114 /* Colors.xcassets */; };
+		05B88CB52C1F7F6A0022F114 /* Hotsauce.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 05B88CB42C1F7F6A0022F114 /* Hotsauce.usdz */; };
+		05B88CD02C237B200022F114 /* gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 05B88CCF2C237B200022F114 /* gramophone.usdz */; };
+		05B88CD22C237B720022F114 /* toy_car.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 05B88CD12C237B720022F114 /* toy_car.usdz */; };
+		05B88CD42C2386460022F114 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B88CD32C2386460022F114 /* ARViewContainer.swift */; };
+		05F203502C279FF20016DEFD /* ARMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F2034F2C279FF20016DEFD /* ARMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +113,13 @@
 		0592AC032C0C0278005A71D3 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		0592AC052C0CF217005A71D3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0592AC072C0CFE6C005A71D3 /* TextStyleAdjustmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleAdjustmentView.swift; sourceTree = "<group>"; };
+		05B88CB22C1F2BAA0022F114 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../../.Trash/Colors.xcassets; sourceTree = "<group>"; };
+		05B88CB42C1F7F6A0022F114 /* Hotsauce.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Hotsauce.usdz; path = ../../../../Dropbox/Mac/Downloads/Hotsauce.usdz; sourceTree = "<group>"; };
+		05B88CCE2C237AEE0022F114 /* Hotsauce.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Hotsauce.usdz; sourceTree = "<group>"; };
+		05B88CCF2C237B200022F114 /* gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = gramophone.usdz; path = ../../../../../Dropbox/Mac/Downloads/gramophone.usdz; sourceTree = "<group>"; };
+		05B88CD12C237B720022F114 /* toy_car.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = toy_car.usdz; path = ../../../../../Dropbox/Mac/Downloads/toy_car.usdz; sourceTree = "<group>"; };
+		05B88CD32C2386460022F114 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		05F2034F2C279FF20016DEFD /* ARMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +168,17 @@
 			path = Music;
 			sourceTree = "<group>";
 		};
+		0568E70E2C1E7A250099F9C3 /* Scavenger */ = {
+			isa = PBXGroup;
+			children = (
+				05B88CCD2C237AED0022F114 /* USDZ */,
+				05B88CB42C1F7F6A0022F114 /* Hotsauce.usdz */,
+				05B88CD32C2386460022F114 /* ARViewContainer.swift */,
+				05F2034F2C279FF20016DEFD /* ARMainView.swift */,
+			);
+			path = Scavenger;
+			sourceTree = "<group>";
+		};
 		0592ABB72C0A5E46005A71D3 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +198,7 @@
 		0592ABC22C0A5E47005A71D3 /* LorenzoStory */ = {
 			isa = PBXGroup;
 			children = (
+				0568E70E2C1E7A250099F9C3 /* Scavenger */,
 				0568E6D92C1BA9870099F9C3 /* Music */,
 				0568E6AA2C1A89430099F9C3 /* Audio */,
 				0592ABFD2C0BEEBF005A71D3 /* FirstPage */,
@@ -186,6 +211,7 @@
 				0592ABC52C0A5E47005A71D3 /* ContentView.swift */,
 				0592ABDA2C0A5F35005A71D3 /* StoryView.swift */,
 				0592ABC72C0A5E49005A71D3 /* Assets.xcassets */,
+				05B88CB22C1F2BAA0022F114 /* Colors.xcassets */,
 				0592ABC92C0A5E49005A71D3 /* Preview Content */,
 				0592AC052C0CF217005A71D3 /* AboutView.swift */,
 				0568E6A22C1A7FDB0099F9C3 /* CustomNavTitle.swift */,
@@ -271,6 +297,16 @@
 			path = FirstPage;
 			sourceTree = "<group>";
 		};
+		05B88CCD2C237AED0022F114 /* USDZ */ = {
+			isa = PBXGroup;
+			children = (
+				05B88CD12C237B720022F114 /* toy_car.usdz */,
+				05B88CCF2C237B200022F114 /* gramophone.usdz */,
+				05B88CCE2C237AEE0022F114 /* Hotsauce.usdz */,
+			);
+			path = USDZ;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B88CB52C1F7F6A0022F114 /* Hotsauce.usdz in Resources */,
 				0568E6EE2C1BBB4E0099F9C3 /* Audio1.mp3 in Resources */,
 				0568E6EF2C1BBB4E0099F9C3 /* Audio2.mp3 in Resources */,
 				0568E6F02C1BBB4E0099F9C3 /* Audio3.mp3 in Resources */,
@@ -337,11 +374,14 @@
 				0568E6F32C1BBB4E0099F9C3 /* Audio6.mp3 in Resources */,
 				0568E6F42C1BBB4E0099F9C3 /* Audio7.mp3 in Resources */,
 				0568E6F52C1BBB4E0099F9C3 /* Audio8.mp3 in Resources */,
+				05B88CD02C237B200022F114 /* gramophone.usdz in Resources */,
 				0568E6F62C1BBB4E0099F9C3 /* Audio9.mp3 in Resources */,
 				0568E6F72C1BBB4E0099F9C3 /* Audio10.mp3 in Resources */,
 				0568E6F82C1BBB4E0099F9C3 /* Audio11.mp3 in Resources */,
 				0568E6F92C1BBB4E0099F9C3 /* Audio12.mp3 in Resources */,
+				05B88CD22C237B720022F114 /* toy_car.usdz in Resources */,
 				0568E6FA2C1BBB4E0099F9C3 /* Audio13.mp3 in Resources */,
+				05B88CB32C1F2BAA0022F114 /* Colors.xcassets in Resources */,
 				0568E6FB2C1BBB4E0099F9C3 /* Audio14.mp3 in Resources */,
 				0568E6FC2C1BBB4E0099F9C3 /* Audio15.mp3 in Resources */,
 				0568E6FD2C1BBB4E0099F9C3 /* Audio16.mp3 in Resources */,
@@ -367,7 +407,9 @@
 				0568E6A32C1A7FDB0099F9C3 /* CustomNavTitle.swift in Sources */,
 				0568E6A52C1A80190099F9C3 /* CustomNavLink.swift in Sources */,
 				0568E6AC2C1A895E0099F9C3 /* AudioView.swift in Sources */,
+				05F203502C279FF20016DEFD /* ARMainView.swift in Sources */,
 				0592ABF22C0B65BF005A71D3 /* Item.swift in Sources */,
+				05B88CD42C2386460022F114 /* ARViewContainer.swift in Sources */,
 				0592ABFA2C0B70AD005A71D3 /* HeroLayer.swift in Sources */,
 				0592ABE82C0AA24A005A71D3 /* MysteryView.swift in Sources */,
 				0568E6A72C1A80510099F9C3 /* progressTracker.swift in Sources */,
@@ -523,6 +565,7 @@
 				DEVELOPMENT_TEAM = 6C7TWR6BW7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to use the camera for the hunt";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -554,6 +597,7 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to use the camera for the hunt";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

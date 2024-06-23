@@ -10,7 +10,6 @@ import SwiftUI
 struct Audio: Identifiable, Hashable {
     var id = UUID()
     var bookTitle: String
-   // var audioFileName: String
     var englishAudioFile: String
     var spanishAudioFile: String
 }
@@ -29,7 +28,6 @@ struct Book: Identifiable, Hashable{
     var color: Color
     var description: String
     var story: String
-   // var audioFileName: String
     var audios: [Audio]
 }
 

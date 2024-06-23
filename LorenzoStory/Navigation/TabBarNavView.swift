@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBarNavView: View {
     var coordinator: UICoordinator = .init()
+
     var body: some View {
         TabView {
                 IntroPage()
